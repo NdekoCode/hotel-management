@@ -1,20 +1,3 @@
-<div class="container mt-10 flex flex-wrap gap-3" *ngIf="hotelData">
-	<article
-		class="border shadow-md border-gray-300 w-[250px] max-w-max min-h-[250px] basis-1/4 rounded-md overflow-hidden"
-		*ngFor="let hotel of hotelData"
-	>
-		<header class="w-full">
-			<img
-				[src]="hotel.imageUrl"
-				[alt]="hotel.hotelName"
-				class="w-full object-cover h-auto"
-			/>
-		</header>
-		<div class="p-5 text-center">
-			<h3 class="text-2xl font-bold my-1 text-gray-500">
-				{{ hotel.hotelName }}
-			</h3>
-			<p>{{ hotel.description }}</p>
-		</div>
-	</article>
+<div class="mt-10 flex flex-wrap gap-3">
+	<app-hotel-card *ngFor="let hotel of data" [hotel]="hotel" />
 </div>

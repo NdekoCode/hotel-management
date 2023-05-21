@@ -1,0 +1,6 @@
+<main class="container mt-10">
+	<app-search-input (searchChange)="search($event)" />
+	<div class="container" *ngIf="filteredHotelData">
+		<app-hotel-list [data]="filteredHotelData" />
+	</div>
+</main>

@@ -1,0 +1,18 @@
+<article
+	class="border shadow-md border-gray-300 w-[250px] max-w-max min-h-[250px] basis-1/4 rounded-md overflow-hidden"
+>
+	<header class="w-full">
+		<img
+			[src]="hotel.imageUrl"
+			[alt]="hotel.hotelName"
+			[title]="hotel.hotelName"
+			class="w-full object-cover h-auto"
+		/>
+	</header>
+	<div class="p-5 text-center">
+		<h3 class="text-2xl font-bold my-1 text-gray-500">
+			{{ hotel.hotelName }}
+		</h3>
+		<p>{{ hotel.description }}</p>
+	</div>
+</article>

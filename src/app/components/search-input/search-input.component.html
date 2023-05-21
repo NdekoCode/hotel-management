@@ -1,0 +1,12 @@
+<div class="mb-3 w-full">
+	<input
+		type="search"
+		name="search"
+		id="search"
+		#searchValue
+		(input)="searchElement(searchValue.value)"
+		placeholder="Enter your search"
+		class="border border-gray-100 w-full shadow px-3 py-3 rounded outline-none"
+		ngModel
+	/>
+</div>

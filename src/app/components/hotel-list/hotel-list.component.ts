@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Hotel } from './../../libs/models/Hotel.model';
+import { IHotel } from './../../libs/constants/types';
 
 @Component({
 	selector: 'app-hotel-list',
@@ -7,5 +7,5 @@ import { Hotel } from './../../libs/models/Hotel.model';
 })
 export class HotelListComponent {
 	title: string = 'Liste des hotel';
-	@Input() data: Hotel[] = [];
+	@Input() data: IHotel[] = [];
 }

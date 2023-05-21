@@ -10,9 +10,18 @@
 		/>
 	</header>
 	<div class="p-5 text-center">
-		<h3 class="text-2xl font-bold my-1 text-gray-500">
-			{{ hotel.hotelName }}
-		</h3>
+		<div class="flex justify-between items-center gap-1">
+			<h3 class="text-2xl font-bold my-1 text-gray-500 basis-4/5">
+				{{ hotel.hotelName }}
+			</h3>
+			<strong class="font-bold">{{
+				hotel.price | currency : "EUR" : "symbol" : "1.2-2" : "fr"
+			}}</strong>
+		</div>
+		<!-- hotel.price | currency : 'EUR':'symbol':'1.2-2':'fr' -->
+		<!-- currency: 'EUR' === definie le code que nous voulons avoir pour la monnaie, par defaut c'est DOLLAR mais nous ici on met EUR pour l'euro -->
+
+		<!-- symbol: '1.2-2' === definie sous quel forme est-ce que nous voulons avoir notre prix, cette combinaison de chiffre veut dire: le 1. signifie que nous voulons avoir au minimum un chiffre avant la virgule, le 2 signifie que nous voulions avoir au minimum 2 chiffre après le titrer et le moins 2 (-2) signifie que nous voulions avoir au maximum 2 chiffre après la virgule et le dernier qui est "fr" veut dire nous voulons afficher le prix sous le format d'ecriture francais -->
 		<p>{{ hotel.description }}</p>
 	</div>
 </article>

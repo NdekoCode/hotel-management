@@ -1,5 +1,5 @@
-import { Hotel } from './../models/Hotel.model';
-export const HOTEL_DATA: Hotel[] = [
+import { IHotel } from './types';
+export const HOTEL_DATA: IHotel[] = [
 	{
 		hotelId: 1,
 		hotelName: 'Buea sweet life',

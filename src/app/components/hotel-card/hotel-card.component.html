@@ -1,5 +1,5 @@
 <article
-	class="border shadow-md border-gray-300 w-[250px] max-w-max min-h-[250px] basis-1/4 rounded-md overflow-hidden"
+	class="border shadow-md border-gray-300 w-[250px] max-w-max min-h-[350px] basis-1/4 rounded-md overflow-hidden"
 >
 	<header class="w-full">
 		<img
@@ -12,10 +12,12 @@
 	<div class="p-5 text-center">
 		<div class="flex justify-between items-center gap-1">
 			<h3 class="text-2xl font-bold my-1 text-gray-500 basis-4/5">
-				{{ hotel.hotelName }}
+				{{ hotel.hotelName | titlecase }}
 			</h3>
 			<strong class="font-bold">{{
-				hotel.price | currency : "EUR" : "symbol" : "1.2-2" : "fr"
+				hotel.price
+					| currency : "EUR" : "symbol" : "1.2-2" : "fr"
+					| replaceComma
 			}}</strong>
 		</div>
 		<!-- hotel.price | currency : 'EUR':'symbol':'1.2-2':'fr' -->

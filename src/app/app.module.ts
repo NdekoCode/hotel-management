@@ -9,6 +9,7 @@ import { HotelCardComponent } from './components/hotel-card/hotel-card.component
 import { HotelListComponent } from './components/hotel-list/hotel-list.component';
 import { SearchInputComponent } from './components/search-input/search-input.component';
 import { HotelsComponent } from './pages/hotels/hotels.component';
+import { ReplaceCommaPipe } from './shared/pipes/replace-comma.pipe';
 registerLocaleData(localeFr, 'fr');
 @NgModule({
 	declarations: [
@@ -17,6 +18,7 @@ registerLocaleData(localeFr, 'fr');
 		SearchInputComponent,
 		HotelsComponent,
 		HotelCardComponent,
+		ReplaceCommaPipe,
 	],
 	imports: [BrowserModule, AppRoutingModule, FormsModule],
 	providers: [],

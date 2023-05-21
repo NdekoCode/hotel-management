@@ -6,11 +6,14 @@ import { Component, Input, OnChanges } from '@angular/core';
 })
 export class StarRatingComponent implements OnChanges {
 	@Input() rating: string | number = 2;
+	ratingClone!: number;
 	public starWidth!: number;
 	items!: (number | string)[];
+	isFloat!: boolean;
 	ngOnChanges(): void {
-		this.rating = parseInt(this.rating as string);
-		this.starWidth = (this.rating * 125) / 5;
-		this.items = new Array(this.rating);
+		this.isFloat = !Number.isInteger(this.rating);
+		this.ratingClone = parseInt(this.rating as string);
+		this.starWidth = (this.ratingClone * 125) / 5;
+		this.items = new Array(this.ratingClone);
 	}
 }

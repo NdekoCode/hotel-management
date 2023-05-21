@@ -1,5 +1,5 @@
 <article
-	class="border shadow-md border-gray-300 w-[250px] max-w-max min-h-[350px] basis-1/4 rounded-md overflow-hidden"
+	class="border flex flex-col shadow-md border-gray-300 w-[250px] max-w-max min-h-[375px] basis-1/4 rounded-md overflow-hidden"
 >
 	<header class="w-full">
 		<img
@@ -26,4 +26,5 @@
 		<!-- symbol: '1.2-2' === definie sous quel forme est-ce que nous voulons avoir notre prix, cette combinaison de chiffre veut dire: le 1. signifie que nous voulons avoir au minimum un chiffre avant la virgule, le 2 signifie que nous voulions avoir au minimum 2 chiffre après le titrer et le moins 2 (-2) signifie que nous voulions avoir au maximum 2 chiffre après la virgule et le dernier qui est "fr" veut dire nous voulons afficher le prix sous le format d'ecriture francais -->
 		<p>{{ hotel.description }}</p>
 	</div>
+	<app-star-rating [rating]="hotel.rating" />
 </article>

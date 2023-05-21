@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from 'src/app/libs/models/Hotel.model';
 import { HOTEL_DATA } from './../../libs/constants/data';
+import { IHotel } from './../../libs/constants/types';
 
 @Component({
 	selector: 'app-hotels',
@@ -19,13 +20,14 @@ export class HotelsComponent implements OnInit {
 		console.log(this.searchValue);
 		this.getHotelData();
 	}
-	getHotelData() {
-		if (!this.searchValue) {
-			this.filteredHotelData = this.hotelData;
-		} else {
-			this.filteredHotelData = this.hotelData.filter((item) =>
-				item.hotelName.includes(this.searchValue)
-			);
-		}
+	private getHotelData() {
+		this.filteredHotelData = this.filterHotelData(this.searchValue);
+	}
+	private filterHotelData(value: string): IHotel[] {
+		return value
+			? this.hotelData.filter((item) =>
+					item.hotelName.toLowerCase().includes(value.toLowerCase())
+			  )
+			: this.hotelData;
 	}
 }

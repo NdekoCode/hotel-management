@@ -8,7 +8,7 @@ export class StarRatingComponent implements OnChanges {
 	@Input() rating: string | number = 2;
 	ratingClone!: number;
 	public starWidth!: number;
-	items!: (number | string)[];
+	items!: number[];
 	isFloat!: boolean;
 	ngOnChanges(): void {
 		this.isFloat = !Number.isInteger(this.rating);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hotel } from 'src/app/libs/models/Hotel.model';
-import { HOTEL_DATA } from './../../libs/constants/data';
 import { IHotel } from './../../libs/constants/types';
+import { HotelListService } from './../../services/hotel-list.service';
 
 @Component({
 	selector: 'app-hotels',
@@ -9,10 +9,11 @@ import { IHotel } from './../../libs/constants/types';
 })
 export class HotelsComponent implements OnInit {
 	searchValue: string = '';
-	public hotelData: Hotel[] = HOTEL_DATA;
+	public hotelData!: Hotel[];
 	public filteredHotelData!: Hotel[];
-
+	constructor(private _hotelService: HotelListService) {}
 	ngOnInit(): void {
+		this.hotelData = this._hotelService.dataHotel;
 		this.getHotelData();
 	}
 	search(value: string): void {

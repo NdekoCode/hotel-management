@@ -18,7 +18,6 @@ export class HotelsComponent implements OnInit {
 	}
 	search(value: string): void {
 		this.searchValue = value;
-		console.log(this.searchValue);
 		this.getHotelData();
 	}
 	private getHotelData() {

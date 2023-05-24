@@ -12,6 +12,8 @@ import { HotelListComponent } from './shared/components/hotel-list/hotel-list.co
 import { SearchInputComponent } from './shared/components/search-input/search-input.component';
 import { StarRatingComponent } from './shared/components/star-rating/star-rating.component';
 import { ReplaceCommaPipe } from './shared/pipes/replace-comma.pipe';
+import { SingleHotelComponent } from './pages/single-hotel/single-hotel.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 registerLocaleData(localeFr, 'fr');
 @NgModule({
 	declarations: [
@@ -22,6 +24,8 @@ registerLocaleData(localeFr, 'fr');
 		HotelCardComponent,
 		ReplaceCommaPipe,
 		StarRatingComponent,
+  SingleHotelComponent,
+  NotFoundComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],

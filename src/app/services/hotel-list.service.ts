@@ -19,4 +19,14 @@ export class HotelListService {
 			catchError(this.apiConfig.handleError)
 		);
 	}
+	getSingleHotel(hotelId: number) {
+		return this._http
+			.get<IHotel>(`${this.apiConfig.BASE_URL}/hotels/${hotelId}`)
+			.pipe(
+				tap((data) => {
+					console.log(data);
+				}),
+				catchError(this.apiConfig.handleError)
+			);
+	}
 }

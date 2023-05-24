@@ -1,4 +1,5 @@
 import { registerLocaleData } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import localeFr from '@angular/common/locales/fr';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +23,7 @@ registerLocaleData(localeFr, 'fr');
 		ReplaceCommaPipe,
 		StarRatingComponent,
 	],
-	imports: [BrowserModule, AppRoutingModule, FormsModule],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

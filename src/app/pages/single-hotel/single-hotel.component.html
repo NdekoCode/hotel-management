@@ -1,1 +1,41 @@
-<p>single-hotel works!</p>
+<div class="flex items-center justify-center min-h-screen" *ngIf="isLoading">
+	<h3 class="text-xl text-center text-gray-700 text center">Loading</h3>
+</div>
+<article
+	*ngIf="hotel && !isLoading; else notFound"
+	class="flex flex-col w-full min-h-screen border border-gray-300 rounded-md shadow-md min-w-max"
+>
+	<header class="w-full">
+		<img
+			[src]="hotel.imageUrl"
+			[alt]="hotel.hotelName"
+			[title]="hotel.hotelName"
+			class="object-cover w-full h-[350px]"
+		/>
+	</header>
+	<div class="p-5 text-center">
+		<div class="flex items-center justify-between gap-1">
+			<h3 class="my-1 text-2xl font-bold text-gray-500 basis-4/5">
+				{{ hotel.hotelName | titlecase }}
+			</h3>
+			<strong class="font-bold">{{
+				hotel.price
+					| currency : "EUR" : "symbol" : "1.2-2" : "fr"
+					| replaceComma
+			}}</strong>
+		</div>
+		<!-- hotel.price | currency : 'EUR':'symbol':'1.2-2':'fr' -->
+		<!-- currency: 'EUR' === definie le code que nous voulons avoir pour la monnaie, par defaut c'est DOLLAR mais nous ici on met EUR pour l'euro -->
+
+		<!-- symbol: '1.2-2' === definie sous quel forme est-ce que nous voulons avoir notre prix, cette combinaison de chiffre veut dire: le 1. signifie que nous voulons avoir au minimum un chiffre avant la virgule, le 2 signifie que nous voulions avoir au minimum 2 chiffre après le titrer et le moins 2 (-2) signifie que nous voulions avoir au maximum 2 chiffre après la virgule et le dernier qui est "fr" veut dire nous voulons afficher le prix sous le format d'ecriture francais -->
+		<p>{{ hotel.description }}</p>
+	</div>
+	<app-star-rating [rating]="hotel.rating" />
+</article>
+<ng-template #notFound>
+	<div class="flex items-center justify-center min-h-screen">
+		<h3 class="text-3xl font-bold text-center text-gray-700 text center">
+			Not found
+		</h3>
+	</div>
+</ng-template>

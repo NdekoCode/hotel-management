@@ -13,6 +13,7 @@ import { HotelListService } from './../../services/hotel-list.service';
 export class SingleHotelComponent implements OnInit, OnDestroy {
 	public hotel!: IHotel;
 	private subscription!: Subscription;
+	isLoading: boolean = true;
 	constructor(
 		private _hotelService: HotelListService,
 		private _apiConfig: ApiConfigService,
@@ -29,8 +30,12 @@ export class SingleHotelComponent implements OnInit, OnDestroy {
 		this.subscription = this._hotelService.getSingleHotel(id).subscribe({
 			next: (data) => {
 				this.hotel = data;
+				this.isLoading = false;
 			},
-			error: this._apiConfig.handleError,
+			error: (err) => {
+				this._apiConfig.handleError(err);
+				this.isLoading = false;
+			},
 		});
 	}
 }

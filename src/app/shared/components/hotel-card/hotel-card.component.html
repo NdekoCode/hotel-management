@@ -1,17 +1,17 @@
 <article
-	class="border flex flex-col shadow-md border-gray-300 w-[250px] max-w-max min-h-[375px] basis-1/4 rounded-md overflow-hidden"
+	class="border flex flex-col shadow-md border-gray-300 w-[250px] max-w-max min-h-[375px] basis-1/4 rounded-md overflow-hidden relative"
 >
 	<header class="w-full">
 		<img
 			[src]="hotel.imageUrl"
 			[alt]="hotel.hotelName"
 			[title]="hotel.hotelName"
-			class="w-full object-cover h-auto"
+			class="object-cover w-full h-auto"
 		/>
 	</header>
 	<div class="p-5 text-center">
-		<div class="flex justify-between items-center gap-1">
-			<h3 class="text-2xl font-bold my-1 text-gray-500 basis-4/5">
+		<div class="flex items-center justify-between gap-1">
+			<h3 class="my-1 text-2xl font-bold text-gray-500 basis-4/5">
 				{{ hotel.hotelName | titlecase }}
 			</h3>
 			<strong class="font-bold">{{
@@ -27,4 +27,5 @@
 		<p>{{ hotel.description }}</p>
 	</div>
 	<app-star-rating [rating]="hotel.rating" />
+	<a [routerLink]="'/hotels/' + hotel.id" class="absolute inset-0 block"></a>
 </article>

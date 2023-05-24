@@ -1,6 +1,6 @@
 import { Company } from '../constants/types';
 export class Hotel {
-	hotelId!: number;
+	id!: number;
 	hotelName!: string;
 	description!: string;
 	price!: number;

@@ -19,9 +19,10 @@ export class HotelListService {
 			catchError(this.apiConfig.handleError)
 		);
 	}
-	getSingleHotel(hotelId: number) {
+	getSingleHotel(id: number): Observable<IHotel> {
+		console.log(this.apiConfig.BASE_URL);
 		return this._http
-			.get<IHotel>(`${this.apiConfig.BASE_URL}/hotels/${hotelId}`)
+			.get<IHotel>(`${this.apiConfig.BASE_URL}/hotels/${id}`)
 			.pipe(
 				tap((data) => {
 					console.log(data);

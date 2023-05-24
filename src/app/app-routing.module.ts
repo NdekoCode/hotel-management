@@ -10,7 +10,7 @@ const routes: Routes = [
 		component: HotelsComponent,
 	},
 	{
-		path: 'hotel/:id',
+		path: 'hotels/:id',
 		component: SingleHotelComponent,
 	},
 	{

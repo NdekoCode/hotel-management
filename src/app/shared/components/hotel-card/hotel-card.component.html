@@ -27,5 +27,5 @@
 		<p>{{ hotel.description }}</p>
 	</div>
 	<app-star-rating [rating]="hotel.rating" />
-	<a [routerLink]="'/hotels/' + hotel.id" class="absolute inset-0 block"></a>
+	<a [routerLink]="['/hotels', hotel.id]" class="absolute inset-0 block"></a>
 </article>

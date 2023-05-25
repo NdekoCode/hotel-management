@@ -14,6 +14,7 @@ import { StarRatingComponent } from './shared/components/star-rating/star-rating
 import { ReplaceCommaPipe } from './shared/pipes/replace-comma.pipe';
 import { SingleHotelComponent } from './pages/single-hotel/single-hotel.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 registerLocaleData(localeFr, 'fr');
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ registerLocaleData(localeFr, 'fr');
 		StarRatingComponent,
   SingleHotelComponent,
   NotFoundComponent,
+  NavbarComponent,
 	],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],

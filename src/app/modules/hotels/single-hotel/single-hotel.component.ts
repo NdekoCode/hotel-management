@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IHotel } from './../../libs/constants/types';
-import { ApiConfigService } from './../../services/api-config.service';
-import { HotelListService } from './../../services/hotel-list.service';
+import { IHotel } from './../../../libs/constants/types';
+import { ApiConfigService } from './../../../shared/services/api-config.service';
+import { HotelListService } from './../../../shared/services/hotel-list.service';
 
 @Component({
 	selector: 'app-single-hotel',

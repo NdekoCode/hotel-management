@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HotelsComponent } from './pages/hotels/hotels.component';
+import { HotelsComponent } from './modules/hotels/hotels/hotels.component';
+import { SingleHotelComponent } from './modules/hotels/single-hotel/single-hotel.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { SingleHotelComponent } from './pages/single-hotel/single-hotel.component';
 import { HotelGuard } from './shared/guards/hotel.guard';
 
 const routes: Routes = [

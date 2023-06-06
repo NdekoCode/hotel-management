@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { Hotel } from 'src/app/libs/models/Hotel.model';
-import { IHotel } from './../../libs/constants/types';
-import { ApiConfigService } from './../../services/api-config.service';
-import { HotelListService } from './../../services/hotel-list.service';
+import { ApiConfigService } from 'src/app/shared/services/api-config.service';
+import { HotelListService } from 'src/app/shared/services/hotel-list.service';
+import { IHotel } from '../../../libs/constants/types';
+import { Hotel } from './../../../shared/models/Hotel.model';
 
 @Component({
 	selector: 'app-hotels',
@@ -21,8 +21,8 @@ export class HotelsComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.getHotelData();
 	}
-	search(value: string): void {
-		this.searchValue = value;
+	search(value: Event | string): void {
+		this.searchValue = value as string;
 		this.getHotelData();
 	}
 

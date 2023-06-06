@@ -1,4 +1,4 @@
-import { Company } from '../constants/types';
+import { Company } from './../../libs/constants/types';
 export class Hotel {
 	id!: number;
 	hotelName!: string;

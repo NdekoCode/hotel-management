@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IHotel } from '../../../libs/constants/types';
+import { IHotel } from './../../../../libs/constants/types';
 
 @Component({
 	selector: 'app-hotel-card',

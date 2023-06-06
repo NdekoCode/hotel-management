@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { HOTEL_DATA } from './../libs/constants/data';
-import { IHotel } from './../libs/constants/types';
+import { IHotel } from '../../libs/constants/types';
+import { HOTEL_DATA } from './../../libs/constants/data';
 import { ApiConfigService } from './api-config.service';
 @Injectable({
 	providedIn: 'root',

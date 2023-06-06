@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './../../app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 import { SearchInputComponent } from './../../shared/components/search-input/search-input.component';
+import { ReplaceCommaPipe } from './../../shared/pipes/replace-comma.pipe';
 
 @NgModule({
-	declarations: [SearchInputComponent],
-	imports: [CommonModule, AppRoutingModule],
-	exports: [SearchInputComponent, AppRoutingModule],
+	declarations: [SearchInputComponent, ReplaceCommaPipe],
+	imports: [],
+	exports: [CommonModule, FormsModule, SearchInputComponent, ReplaceCommaPipe],
 })
 export class SharedModule {}

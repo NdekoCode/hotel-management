@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiConfigService } from 'src/app/shared/services/api-config.service';
 import { HotelListService } from 'src/app/shared/services/hotel-list.service';
-import { IHotel } from '../../../libs/constants/types';
-import { Hotel } from './../../../shared/models/Hotel.model';
+import { IHotel } from '../../libs/constants/types';
+import { Hotel } from './../../shared/models/Hotel.model';
 
 @Component({
 	selector: 'app-hotels',

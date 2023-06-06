@@ -7,6 +7,7 @@ const routes: Routes = [
 	{
 		path: 'home',
 		component: HotelsComponent,
+		pathMatch: 'full',
 	},
 
 	{
